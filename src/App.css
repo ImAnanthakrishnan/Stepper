@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: aliceblue;
+}
+
+
+/*--------stepper---------*/
+
+.stepper-container{
+    max-width: 600px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    justify-content: center; 
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.top-stepper{
+    display: flex;
+    width: 75%;
+    justify-content: space-evenly;
+    margin: 1em auto;
+    align-items: center;
+    
+}
+
+.bottom-stepper{
+    display: flex;
+    width: 85%;
+    margin: .75em auto;
+}
+
+.bottom-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.bottom-container :first-child{
+    font-size: .75rem;
+    color: rgb(140, 125, 125);
+}
+
+
+/*------feature------*/
+.feature{
+    max-width: 600px;
+    height: 400px;
+    margin: 2em auto;
+    color: #7E22CE;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    background-color:#fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;
+}
+
+.feature-input{
+    margin-bottom: 1.25rem;
+}
+
+.feature form{
+    margin-top: 35px;
+}
+
+.feature-input input{
+    width: 400px;
+    padding: 0.75rem 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: gray;
+}
+
+.feature-input input::placeholder{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.feature button{
+    width: 400px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    height: 46px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #7E22CE;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.feature button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #795c92;
+    transition: left 0.3s ease;
+    z-index: 0;
+}
+
+.feature button:hover::before {
+    left: 0;
+}
+
+.feature button:hover {
+    color: #ecf0f1;
+}
+
+.feature button span {
+    position: relative;
+    z-index: 1;
+}
+
+.heading{
+ margin-top: 5px;
+}
+
+.back{
+    display: flex;
+    align-self: flex-start;
+    margin:.5em .75em;
+    color: black;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width:499px){
+    .feature-input input{
+        width: 100%;
+    }
+    .feature button{
+        width: 100%;
+    }
+}
