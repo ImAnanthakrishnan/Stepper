@@ -1,4 +1,3 @@
-import React from 'react'
 import { FormType } from '../utils/types'
 
 const Summary = ({formData}:{formData:FormType}) => {

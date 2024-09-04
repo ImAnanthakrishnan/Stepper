@@ -1,4 +1,3 @@
-import React from 'react'
 import { PropsType } from '../utils/types'
 import { IoArrowBackCircleOutline } from 'react-icons/io5'
 

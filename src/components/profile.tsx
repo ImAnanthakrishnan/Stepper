@@ -1,4 +1,3 @@
-import React from "react";
 import { PropsType } from "../utils/types";
 
 const Profile = ({

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { BsCircleFill } from "react-icons/bs";
 import { MdOutlineRadioButtonChecked } from "react-icons/md";
@@ -13,7 +13,7 @@ const Stepper = ({
   tab: string;
   status:StatusFullType
 }) => {
-  console.log(status);
+  console.log(setTab,tab);
   return (
     <section className="stepper-container">
       <div className="top-stepper">
