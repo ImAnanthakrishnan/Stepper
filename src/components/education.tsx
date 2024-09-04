@@ -2,11 +2,11 @@ import React from 'react'
 import { PropsType } from '../utils/types'
 import { IoArrowBackCircleOutline } from 'react-icons/io5'
 
-const Education = ({handleChange,handleSubmit,formData}:PropsType) => {
+const Education = ({handleChange,handleSubmit,formData,errors,handleBack}:PropsType) => {
   return (
     <section className='feature'>
       <h2 className="heading">Education</h2>
-      <form onSubmit={()=>handleSubmit('education')}>
+      <div className='form'>
         <div className="feature-input">
           <input
             type="text"
@@ -15,7 +15,7 @@ const Education = ({handleChange,handleSubmit,formData}:PropsType) => {
             value={formData.qualification}
             onChange={handleChange}
           />
-          {/*errors.email && <p className="errors">{errors.email}</p>*/}
+          {errors.qualification && <p className="errors">{errors.qualification}</p>}
         </div>
         <div className="feature-input">
           <input
@@ -25,7 +25,7 @@ const Education = ({handleChange,handleSubmit,formData}:PropsType) => {
             value={formData.specification}
             onChange={handleChange}
           />
-          {/*errors.password && <p className="errors">{errors.password}</p>*/}
+          {errors.specification && <p className="errors">{errors.specification}</p>}
         </div>
         <div className="feature-input">
           <input
@@ -35,7 +35,7 @@ const Education = ({handleChange,handleSubmit,formData}:PropsType) => {
             value={formData.cgpa}
             onChange={handleChange}
           />
-          {/*errors.password && <p className="errors">{errors.password}</p>*/}
+          {errors.cgpa && <p className="errors">{errors.cgpa}</p>}
         </div>
         <div className="feature-input">
           <input
@@ -45,11 +45,11 @@ const Education = ({handleChange,handleSubmit,formData}:PropsType) => {
             value={formData.university}
             onChange={handleChange}
           />
-          {/*errors.password && <p className="errors">{errors.password}</p>*/}
+          {errors.university && <p className="errors">{errors.university}</p>}
         </div>
-        <button><span>Submit</span></button>
-      </form>
-      <p className='back'><IoArrowBackCircleOutline size={20}/> Back</p>
+        <button onClick={()=>handleSubmit('summary')}><span>Submit</span></button>
+      </div>
+      <p className='back' onClick={handleBack}><IoArrowBackCircleOutline size={20}/> Back</p>
     </section>
   )
 }

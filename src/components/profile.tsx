@@ -1,12 +1,16 @@
 import React from "react";
 import { PropsType } from "../utils/types";
 
-
-const Profile = ({ handleChange,handleSubmit,formData }: PropsType) => {
+const Profile = ({
+  handleChange,
+  handleSubmit,
+  formData,
+  errors,
+}: PropsType) => {
   return (
     <section className="feature">
-        <h2 className="heading">Profile</h2>
-      <form onSubmit={() => handleSubmit('profile')}>
+      <h2 className="heading">Profile</h2>
+      <div className="form">
         <div className="feature-input">
           <input
             type="text"
@@ -15,7 +19,7 @@ const Profile = ({ handleChange,handleSubmit,formData }: PropsType) => {
             value={formData.name}
             onChange={handleChange}
           />
-          {/*errors.email && <p className="errors">{errors.email}</p>*/}
+          {errors.name && <p className="errors">{errors.name}</p>}
         </div>
         <div className="feature-input">
           <input
@@ -26,7 +30,7 @@ const Profile = ({ handleChange,handleSubmit,formData }: PropsType) => {
             min={1}
             onChange={handleChange}
           />
-          {/*errors.password && <p className="errors">{errors.password}</p>*/}
+          {errors.age && <p className="errors">{errors.age}</p>}
         </div>
         <div className="feature-input">
           <input
@@ -37,7 +41,7 @@ const Profile = ({ handleChange,handleSubmit,formData }: PropsType) => {
             min={1}
             onChange={handleChange}
           />
-          {/*errors.password && <p className="errors">{errors.password}</p>*/}
+          {errors.email && <p className="errors">{errors.email}</p>}
         </div>
         <div className="feature-input">
           <input
@@ -47,10 +51,12 @@ const Profile = ({ handleChange,handleSubmit,formData }: PropsType) => {
             value={formData.contact}
             onChange={handleChange}
           />
-          {/*errors.password && <p className="errors">{errors.password}</p>*/}
+          {errors.contact && <p className="errors">{errors.contact}</p>}
         </div>
-        <button><span>Submit</span></button>
-      </form>
+        <button onClick={() => handleSubmit("address")}>
+          <span>Submit</span>
+        </button>
+      </div>
     </section>
   );
 };
