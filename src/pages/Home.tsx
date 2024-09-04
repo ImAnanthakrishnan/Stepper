@@ -128,7 +128,7 @@ const Home = () => {
           handleBack={handleBack}
         />
       ) : 
-      (<Summary formData={formData}/>)
+      (<Summary formData={formData} handleBack={handleBack}/>)
       }
       <Stepper setTab={setTab} tab={tab} status={status} />
     </section>

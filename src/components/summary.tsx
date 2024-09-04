@@ -1,8 +1,10 @@
+import { IoArrowBackCircleOutline } from 'react-icons/io5'
 import { FormType } from '../utils/types'
 
-const Summary = ({formData}:{formData:FormType}) => {
+const Summary = ({formData,handleBack}:{formData:FormType,handleBack: () => void}) => {
   return (
     <section className="form-listing-container">
+      <p className='back' onClick={handleBack} ><IoArrowBackCircleOutline size={20}/> Back</p>
       <h1 style={{textAlign:'center',marginBottom:'10px'}}>Summary</h1>
       <div className="form-row">
         <div className="form-section">
